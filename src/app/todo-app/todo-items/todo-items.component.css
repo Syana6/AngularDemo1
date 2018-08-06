@@ -1,0 +1,21 @@
+.green{
+    color: lightskyblue;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+.text-danger{
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.text-even{
+    background: rgb(163, 89, 163);
+}
+
+.text-odd{
+    background: greenyellow;
+}
+

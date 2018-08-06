@@ -1,0 +1,32 @@
+<ul>
+  <li><label for="chk1"><input id="chk1" type="checkbox">To Do Item 1</label> | <a href="#">Delete</a></li>
+  <li><label for="chk2"><input id="chk2" type="checkbox">To Do Item 2</label>
+  <li><label for="chk3"><input id="chk3" type="checkbox" checked=true>To Do Item 3</label>
+</ul>
+
+<div>
+  <strong>Test todo-items.component.html</strong>
+</div>
+
+<div>
+  <span class=blue>Test todo-items.component.html</span>
+</div>
+
+<div>
+  <span [ngClass]=getBlueClass()>Test todo-items.component.html</span>
+</div>
+
+<ul>
+  <li *ngFor="let item of getTodoList(); let recordIndex = index; let firstRecord = first;
+  let lastRecord = last; let evenRecord = even; let oddRecord = odd">
+    <label htmlFor="chk_{{ item.id }}">
+      <input id=chk_{{item.id}} type=checkbox [checked]=item.done (click)=itemClick(item)>
+      <span [ngClass]="{'done' : item.done, 'text-danger' : firstRecord, 'text-even' : evenRecord,
+      'text-odd' : oddRecord }">{{ item.value }}</span>
+    </label>
+
+    <a href="#" (click)=delete(item)> | Deleted</a>
+    <!-- <span *ngIf=item.done> Finidhed</span> -->
+    <span> {{item.done | todoDone: true}}</span>
+  </li>
+</ul>
